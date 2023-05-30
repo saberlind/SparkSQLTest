@@ -14,7 +14,8 @@ object SparkSQL01_input {
         val spark: SparkSession = SparkSession.builder().config(conf).getOrCreate()
 
         // 3 读取数据
-        val df: DataFrame = spark.read.json("input/user.json")
+        // file:/// 表示从本地读取文件，后面必须跟绝对路径 ！！！
+        val df: DataFrame = spark.read.json("file:///E:\\IDEAworkspace\\SparkSQLTest\\input\\user.json")
 
         // 4 可视化
         df.show()

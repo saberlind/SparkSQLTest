@@ -14,7 +14,7 @@ object SparkSQL05_UDF{
         val spark: SparkSession = SparkSession.builder().config(conf).getOrCreate()
 
         // 3 读取数据
-        val df: DataFrame = spark.read.json("input/user.json")
+        val df: DataFrame = spark.read.json("file:///E:\\IDEAworkspace\\SparkSQLTest\\input\\user.json")
 
         // 4 创建DataFrame临时视图
         df.createOrReplaceTempView("user")

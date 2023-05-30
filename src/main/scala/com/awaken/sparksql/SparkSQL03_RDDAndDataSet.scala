@@ -10,7 +10,7 @@ object SparkSQL03_RDDAndDataSet {
     val conf = new SparkConf().setAppName("SparkCoreTest").setMaster("local[*]")
     //TODO 2 利用SparkConf创建sc对象
     val sc = new SparkContext(conf)
-    val lineRDD: RDD[String] = sc.textFile("input\\user.txt")
+    val lineRDD: RDD[String] = sc.textFile("file:///E:\\IDEAworkspace\\SparkSQLTest\\input\\user.txt")
     //普通rdd,数据只有类型,没有列名(缺少元数据)
     val rdd: RDD[(String, Long)] = lineRDD.map {
       line => {
